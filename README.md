@@ -2,9 +2,16 @@
 
 This project is an end-to-end sentiment-analysis system capable of classifying text from Twitter, Reddit, and images via OCR. It includes a full preprocessing pipeline, multiple ML classifiers, confusion-matrix visualizations, and an interactive Gradio web interface supporting both text input and image uploads.
 
-📌 Features ✅ Text Sentiment Analysis ✅ Image → OCR → Sentiment Classification ✅ Multiple ML Models Trained & Benchmarked ✅ Confusion Matrices for Every Model ✅ Gradio UI for Real-Time Predictions ✅ Saved Models for Reuse (joblib) 📁 Project Workflow
+📌 Features
+✅ Text Sentiment Analysis
+✅ Image → OCR → Sentiment Classification
+✅ Multiple ML Models Trained & Benchmarked
+✅ Confusion Matrices for Every Model
+✅ Gradio UI for Real-Time Predictions
+✅ Saved Models for Reuse (joblib)
+📁 Project Workflow
+1. Data Preprocessing
 
-Data Preprocessing
 The pipeline performs:
 
 URL, punctuation, emoji removal
@@ -41,8 +48,16 @@ Random Forest
 
 Multinomial Naive Bayes
 
-📈 Twitter Dataset Results (162,980 rows) Performance Summary Model Accuracy Precision Recall F1 Score ROC-AUC LinearSVC 0.8939 0.8941 0.8939 0.8931 — LogisticRegression 0.8788 0.8800 0.8788 0.8773 0.9599 RandomForest 0.8497 0.8510 0.8497 0.8459 0.9515 MultinomialNB 0.7266 0.7449 0.7266 0.7180 0.8994 Classification Report Accuracy: 0.89
-Macro F1: 0.88
+📈 Twitter Dataset Results (162,980 rows)
+Performance Summary
+Model	Accuracy	Precision	Recall	F1 Score	ROC-AUC
+LinearSVC	0.8939	0.8941	0.8939	0.8931	—
+LogisticRegression	0.8788	0.8800	0.8788	0.8773	0.9599
+RandomForest	0.8497	0.8510	0.8497	0.8459	0.9515
+MultinomialNB	0.7266	0.7449	0.7266	0.7180	0.8994
+Classification Report
+Accuracy: 0.89  
+Macro F1: 0.88  
 Weighted F1: 0.89
 
 Class Performance
@@ -63,8 +78,16 @@ Most misclassifications occurred between Neutral ↔️ Negative due to similar 
 
 Naive Bayes confused Positive/Negative heavily due to TF-IDF sensitivity.
 
-📈 Reddit Dataset Results (depression_dataset_reddit_cleaned.csv) Performance Summary Model Accuracy Precision Recall F1 Score ROC-AUC LinearSVC 0.9638 0.9639 0.9638 0.9637 — LogisticRegression 0.9599 0.9604 0.9599 0.9599 — RandomForest 0.9579 0.9604 0.9579 0.9579 — MultinomialNB 0.8862 0.9036 0.8862 0.8851 — Classification Report Accuracy: 0.96
-Macro F1: 0.96
+📈 Reddit Dataset Results (depression_dataset_reddit_cleaned.csv)
+Performance Summary
+Model	Accuracy	Precision	Recall	F1 Score	ROC-AUC
+LinearSVC	0.9638	0.9639	0.9638	0.9637	—
+LogisticRegression	0.9599	0.9604	0.9599	0.9599	—
+RandomForest	0.9579	0.9604	0.9579	0.9579	—
+MultinomialNB	0.8862	0.9036	0.8862	0.8851	—
+Classification Report
+Accuracy: 0.96  
+Macro F1: 0.96  
 Weighted F1: 0.96
 
 Class Performance
@@ -153,12 +176,19 @@ Mobile-friendly
 
 "Share=True" allows public hosting
 
+
+
 🚀 Running the Project
+1. Install dependencies
+pip install -r requirements.txt
 
-Install dependencies pip install -r requirements.txt
-
-Launch Notebook
+2. Launch Notebook
 
 Run all cells inside Google Colab / Jupyter.
 
-Start Gradio App
+3. Start Gradio App
+
+Last cell:
+
+demo.launch(share=True, debug=True)
+
